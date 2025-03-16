@@ -1,0 +1,17 @@
+# Use a lightweight Python image
+FROM python:3.9-slim
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the application files
+COPY . /app
+
+# Install any Python dependencies if needed (e.g., Flask)
+RUN pip install --no-cache-dir flask
+
+# Expose the port that your server runs on
+EXPOSE 8000
+
+# Run the server
+CMD ["python", "custom_server.py"]
